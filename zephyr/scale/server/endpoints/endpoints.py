@@ -45,7 +45,7 @@ class TestCaseEndpoints(EndpointTemplate):
 
     def create_step_attachment(self, test_case_key, step_index, file_path):
         """Create a new attachment on the specified Step of a Test Case"""
-        return self.session.post(Paths.CASE_STP_ATTACH.format(test_case_key, step_index),
+        return self.session.post_file(Paths.CASE_STP_ATTACH.format(test_case_key, step_index),
                                  file_path)
 
     def search_cases(self, query, **params):
